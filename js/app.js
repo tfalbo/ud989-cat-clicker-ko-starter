@@ -22,6 +22,8 @@ var ViewModel = function() {
             return "Adult";
         }
     }, this);
+
+    this.nicknames = ko.observableArray(['TabTab', 'T-Bone' ,'Mister T']);
 }
 
 ko.applyBindings(new ViewModel());
