@@ -4,8 +4,6 @@ var Cat = function(){
     this.imgSrc = ko.observable('./img/434164568_fea0ad4013_z.jpg');
     this.imgAttribution = ko.observable('https://www.flickr.com/');
 
-    
-
     this.level = ko.computed(function(){
         var clicks = this.clickCount();
         if(clicks < 10){
@@ -27,11 +25,12 @@ var Cat = function(){
 
 
 var ViewModel = function() {
+    var self = this;
 
     this.currentCat = ko.observable(new Cat());
 
     this.incrementCounter = function() {
-        this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+        self.currentCat().clickCount(self.currentCat().clickCount() + 1);
     };
     
 }
